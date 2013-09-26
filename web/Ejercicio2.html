@@ -1,0 +1,51 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            window.onload = funcioninicio;
+            function funcioninicio() {
+                var altura = prompt("Introduzca su altura");
+                var peso = prompt("Introduzca su peso");
+                var imc = peso / Math.pow(altura, 2);
+                var respuesta;
+                
+                if(imc >= 40)
+                    respuesta = "Obeso tipo III";
+                else if (imc >= 35.00 && imc <= 39.99) 
+                    respuesta = "Obeso tipo II"; 
+                else if (imc >= 35.00 && imc <= 39.99) 
+                    respuesta = "Obeso tipo II";                 
+                
+                else if (imc >= 25.00) 
+                    respuesta = "Sobrepeso"; 
+                else if (imc >= 18.5 && imc <= 24.99) 
+                    respuesta = "Usted es normal"; 
+                else if (imc >= 17.00 && imc <= 18.49) 
+                    respuesta = "Delgadez no muy pronunciada";  
+                else if (imc >= 16.00 && imc <= 16.99) 
+                    respuesta = "Delgadez moderada";  
+                else if (imc < 16.00) 
+                    respuesta = "Delgadez severa";                
+                else if (imc < 15.99)
+                    respuesta = "Infrapeso";
+
+
+ 
+
+      
+                
+                alert(respuesta + imc); 
+            }
+            
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>

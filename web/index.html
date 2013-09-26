@@ -1,0 +1,58 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <title>Ejercicio Hola mundo</title>
+        <style>
+        table, td, tr
+        {
+        border:1px solid white;
+        padding-left:7px;
+        padding-right:7px;
+        }
+        tr
+        {
+        background-color:#819FF7;
+        color:white;
+        }
+</style>
+        <script type="text/javascript">
+            window.onload = funcioninicio;
+            function funcioninicio() {
+
+                var i, j, total;
+                var tabla = "<table>";
+                for (i = 1; i <= 10; i++) {
+                    total += "<tr>";
+                    for (j = 1; j <= 10; j++) {
+                        total = i * j;
+                        total = " " + total;
+                        if (total < 10)
+                            total = " " + total;
+                        tabla += "<td>";
+                        tabla += total;
+                        tabla += "</td>";
+                    }
+                    tabla += "</tr>";
+
+                }
+                tabla += "</table>"
+                document.getElementById('ejercicio').innerHTML = tabla;
+            }
+
+
+        </script>
+    </head>
+    <body>
+        <div id="texto">EJERCICIO1</div>
+        </br>
+        <div id="ejercicio"></div>
+       
+    </body>
+    
+
+</html>
