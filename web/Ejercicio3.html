@@ -10,40 +10,40 @@ and open the template in the editor.
         <script type="text/javascript">
             window.onload = funcionaleatoria;
             function funcionaleatoria() {
-                var aleatorio = Math.floor(Math.random() * 101);
-                var numero = prompt("Di un numero:");
-                var intento = 0;
-                var pista_h;
+                abrirtabla = "<table border = '1'><tr><th>INTENTO</th><th>NUMERO INTRODUCIDO</th><th>AYUDA</th></tr>";
+                cerrar = "</table>";
+                aleatorio = Math.floor(Math.random() * 101);
+                numero = prompt("Di un numero:");
+                intento = 0;
+                resultado = "";
                 while (numero != aleatorio) {
-                    document.getElementById('num').innerHTML = numero;
+                    resultado +="<tr>";
                     intento++;
-                    if (numero < aleatorio)
-                        document.getElementById('pista').innerHTML = "Bajo </br>";
-                    else if (numero > aleatorio)
-                        document.getElementById('pista').innerHTML = "Alto </br>";
-                    document.getElementById('intento').innerHTML = intento;
+                    resultado += "<td>" + intento + "</td>";
+                    resultado += "<td>" + numero + "</td>";
+
+                    if (numero < aleatorio) {
+                        resultado += "<td>Bajo</td></tr>";
+                    } else {
+                        resultado += "<td>Alto</td></tr>";
+                    }
+                    document.getElementById('tabla').innerHTML = abrirtabla + resultado + cerrar;
                     numero = prompt("Di un numero:");
                     
                 }
-                if(numero == aleatorio){
-                 pista_h += "CORRECTO!!"; 
-                }
+                resultado += "<tr>";
+                intento++;
+                resultado += "<td>" + intento + "</td>";
+                resultado += "<td>" + numero + "</td>";
+                resultado += "<td>CORRECTO!!</td>";
+                resultado += "</tr>";
+                document.getElementById('tabla').innerHTML = abrirtabla + resultado + cerrar;
 
             }
         </script>
     </head>
     <body>
-        <table border ="1">
-            <tr>
-                <th>INTENTO</th>
-                <th>NUMERO INTRODUCIDO</th>
-                <th>AYUDA</th>
-            </tr>
-            <tr>
-                <td id="intento"></td>
-                <td id="num"></td>
-                <td id="pista"></td>    
-            </tr>
-        </table>
+        <h1>Ejercicio aleatorio</h1>
+        <div id="tabla"></div>
     </body>
 </html>

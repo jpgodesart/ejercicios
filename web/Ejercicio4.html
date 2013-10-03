@@ -10,15 +10,16 @@ and open the template in the editor.
         <script type="text/javascript">
             window.onload = funcionmedia;
             function funcionmedia() {  
-            var cantidad = 0;    
-            var media;
-            var total = 0;
-            var numero = prompt("Di un numero:");
-            while (numero != "fin"){
-                total = total + numero;
+            cantidad = 0;    
+            media;
+            total = 0;
+            do {
+                numero = prompt("Di un numero:");
+                if(!isNaN(numero)){
+                total = parseInt(total) + parseInt(numero);
                 cantidad++;
-                var numero = prompt("Di un numero:");
-            }
+                }
+            }while(numero != "fin")
             media = total / cantidad;
             document.getElementById('cantidad').innerHTML = "Numeros introducidos: " + cantidad;
             document.getElementById('total').innerHTML = "Suma total: " + total;
