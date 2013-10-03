@@ -1,0 +1,49 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 4 MEDIA</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            window.onload = funcionorden;
+            function funcionorden() {
+                num1 = prompt("I - Di un numero:");
+                num2 = prompt("II - Di un numero:");
+                num3 = prompt("III - Di un numero:");
+                if (num1 < num2 && num1 < num3) {
+                    if (num2 < num3) {
+                        result = num1 + " " + num2 + " " + num3;
+                    } else {
+                        result = num1 + " " + num3 + " " + num2;
+                    }
+                }
+                else if (num2 < num1 && num2 < num3) {
+                    if (num1 < num3) {
+                        result = num2 + " " + num1 + " " + num3;
+                    } else {
+                        result = num2 + " " + num3 + " " + num1;
+                    }
+                }
+                else if (num3 < num1 && num3 < num2) {
+                    if (num3 < num3) {
+                        result = num2 + " " + num1 + " " + num3;
+                    } else {
+                        result = num2 + " " + num3 + " " + num1;
+                    }
+                }
+            }
+            document.getElementById('res').innerHTML = result;
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1>EJERCICIO PAR IMPAR</h1>
+        <div id="res"></div>
+
+    </body>
+</html>
+
