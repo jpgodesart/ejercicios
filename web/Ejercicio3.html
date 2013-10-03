@@ -12,25 +12,38 @@ and open the template in the editor.
             function funcionaleatoria() {
                 var aleatorio = Math.floor(Math.random() * 101);
                 var numero = prompt("Di un numero:");
-                var intento = 1;
+                var intento = 0;
+                var pista_h;
                 while (numero != aleatorio) {
-                    if (numero < aleatorio)
-                        document.getElementById('num').innerHTML = numero + " es un número demasiado bajo";
-                    else if (numero > aleatorio)
-                        document.getElementById('num').innerHTML = numero + " es un número demasiado alto";
-                    document.getElementById('intento').innerHTML = intento +" intentos";
-                    numero = prompt("Di un numero:");
+                    document.getElementById('num').innerHTML = numero;
                     intento++;
+                    if (numero < aleatorio)
+                        document.getElementById('pista').innerHTML = "Bajo </br>";
+                    else if (numero > aleatorio)
+                        document.getElementById('pista').innerHTML = "Alto </br>";
+                    document.getElementById('intento').innerHTML = intento;
+                    numero = prompt("Di un numero:");
                     
                 }
-                if(numero == aleatorio)
-                 document.getElementById('num').innerHTML = numero +" es el numero CORRECTO!!";   
+                if(numero == aleatorio){
+                 pista_h += "CORRECTO!!"; 
+                }
+
             }
         </script>
     </head>
     <body>
-        <div id="intento"></div>
-        <br/>
-        <div id="num"></div>
+        <table border ="1">
+            <tr>
+                <th>INTENTO</th>
+                <th>NUMERO INTRODUCIDO</th>
+                <th>AYUDA</th>
+            </tr>
+            <tr>
+                <td id="intento"></td>
+                <td id="num"></td>
+                <td id="pista"></td>    
+            </tr>
+        </table>
     </body>
 </html>

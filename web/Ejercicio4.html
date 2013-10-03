@@ -1,0 +1,37 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 4 MEDIA</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            window.onload = funcionmedia;
+            function funcionmedia() {  
+            var cantidad = 0;    
+            var media;
+            var total = 0;
+            var numero = prompt("Di un numero:");
+            while (numero != "fin"){
+                total = total + numero;
+                cantidad++;
+                var numero = prompt("Di un numero:");
+            }
+            media = total / cantidad;
+            document.getElementById('cantidad').innerHTML = "Numeros introducidos: " + cantidad;
+            document.getElementById('total').innerHTML = "Suma total: " + total;
+            document.getElementById('media').innerHTML = "Media: " + media;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>EJERCICIO MEDIA</h1>
+        <div id="total"></div>
+        <br/>
+        <div id="media"></div>
+        <br/>
+        <div id="cantidad"></div>
+    </body>
+</html>
