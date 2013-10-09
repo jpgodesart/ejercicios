@@ -13,7 +13,7 @@ and open the template in the editor.
                 num1 = prompt("I - Di un numero:");
                 num2 = prompt("II - Di un numero:");
                 num3 = prompt("III - Di un numero:");
-                orden;
+                orden ="";
                 if (num1 < num2 ) {
                     mas = num2;
                     menos = num1;  
@@ -22,12 +22,17 @@ and open the template in the editor.
                     mas = num1;
                     menos = num2; 
                 }
-                orden = menos + " " + mas;
+                orden =+ menos + " " + mas;
                 if(num3 > mas){
                     orden += " " + num3;                    
-                }else{
-                    orden += num3 + " " + orden;
-                }
+                }else if (num3 < mas && num3 < menos)
+                    {
+                    orden = num3 + " " + orden;
+                    }
+                    else{
+                        orden = menos + " " + num3 + " " +mas;
+                    }
+                    
                 document.getElementById('res').innerHTML = orden;
             }
 

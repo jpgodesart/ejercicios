@@ -1,0 +1,88 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 8</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            window.onload = funcionfecha;
+            function funcionfecha() {
+                
+                do{
+                dia = prompt("Numero De Dia (1 - 31):");
+                }while(dia < 1 || dia > 31);
+                do{
+                mes = prompt("Numero De Mes (1 - 12):");
+                }while(mes < 1 || mes > 12);
+                do{
+                anyo = prompt("Numero De Año (1950 - 2013):");
+                }while(anyo < 1950 || anyo > 2013);
+                
+                d = new Date(anyo, mes - 1 , dia);
+                diasemana = d.getDay();
+
+                switch(diasemana){
+                    
+                    case 0: dialetra = "Domingo";
+                        break;
+                    case 1: dialetra = "Lunes";
+                        break;
+                    case 2: dialetra = "Martes";
+                        break;
+                    case 3: dialetra = "Miercoles";
+                        break;
+                    case 4: dialetra = "Jueves";
+                        break;
+                    case 5: dialetra = "Viernes";
+                        break;
+                    case 6: dialetra = "Sabado";
+                        break;                     
+                }
+                
+                switch(mes){
+                    
+                    case 1: mesletra = "Enero";
+                        break;
+                    case 2: mesletra = "Febrero";
+                        break;
+                    case 3: mesletra = "Marzo";
+                        break;
+                    case 4: mesletra = "Abril";
+                        break;
+                    case 5: mesletra = "Mayo";
+                        break;
+                    case 6: mesletra = "Junio";
+                        break;
+                    case 7: mesletra = "Julio";
+                        break;
+                    case 8: mesletra = "Agosto";
+                        break;
+                    case 9: mesletra = "Septiembre";
+                        break;
+                    case 10: mesletra = "Octubre";
+                        break;
+                    case 11: mesletra = "Noviembre";
+                        break;
+                    case 12: mesletra = "Diciembre";
+                        break;  
+                }
+
+                document.getElementById('d').innerHTML = "Día de la semana: " + dialetra;
+                document.getElementById('m').innerHTML = "Mes: " + mesletra;
+                document.getElementById('res').innerHTML = dialetra + ", " + dia + " de " + mesletra + " de " + anyo; ;
+            }
+
+
+
+        </script>
+    </head>
+    <body>
+        <h1>EJERCICIO 8 FECHAS</h1>
+        <div id="d"></div>
+        <div id="m"></div>
+        <div id="res"></div>
+    </body>
+</html>
