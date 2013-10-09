@@ -21,7 +21,7 @@ and open the template in the editor.
                 anyo = prompt("Numero De Año (1950 - 2013):");
                 }while(anyo < 1950 || anyo > 2013);
                 
-                d = new Date(anyo, mes - 1 , dia);
+                d = new Date(anyo, mes - 1, dia);
                 diasemana = d.getDay();
 
                 switch(diasemana){
@@ -41,8 +41,8 @@ and open the template in the editor.
                     case 6: dialetra = "Sabado";
                         break;                     
                 }
-                
-                switch(mes){
+               
+                switch(parseInt(mes)){
                     
                     case 1: mesletra = "Enero";
                         break;
@@ -72,7 +72,7 @@ and open the template in the editor.
 
                 document.getElementById('d').innerHTML = "Día de la semana: " + dialetra;
                 document.getElementById('m').innerHTML = "Mes: " + mesletra;
-                document.getElementById('res').innerHTML = dialetra + ", " + dia + " de " + mesletra + " de " + anyo; ;
+                document.getElementById('res').innerHTML = dialetra + ", " + dia + " de " + mesletra + " de " + anyo;
             }
 
 
@@ -82,7 +82,9 @@ and open the template in the editor.
     <body>
         <h1>EJERCICIO 8 FECHAS</h1>
         <div id="d"></div>
+        <br/>
         <div id="m"></div>
+        <br/>
         <div id="res"></div>
     </body>
 </html>
