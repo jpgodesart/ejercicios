@@ -1,0 +1,53 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 9</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script type="text/javascript">
+            window.onload = funciontablas;
+            function funciontablas() {
+                
+            tabla = "";
+            resultado = 0;
+            for(numtabla = 1; numtabla <= 100; numtabla++){
+
+                tabla += "<table class='table table-bordered formato'>";
+
+                for(cerodiez = 0; cerodiez <=10; cerodiez++){
+                    resultado = parseInt(numtabla) * parseInt(cerodiez);
+
+                    tabla += "<tr><td>" + numtabla + " x " + cerodiez + " = " + resultado + "</td>";
+                }
+                tabla += "</tr>";
+            }
+            tabla += "</table>";   
+                
+
+                document.getElementById('tabla').innerHTML = tabla;
+            }
+
+
+
+        </script>
+        <style type="text/css">
+            .formato{
+                width: 115px;
+                float: left;
+                margin: 4px;
+                font-size: 12px;
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+        <h1>EJERCICIO TABLAS</h1>
+        <div id="tabla"></div>
+
+    </body>
+</html>
