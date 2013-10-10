@@ -1,0 +1,45 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 9</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            window.onload = funcionrango;
+            function funcionrango() {
+                
+                do{
+                    
+                A = prompt("Dame el numero A:");
+                B = prompt("Dame el numero B (debe ser mayor que A):");
+                
+                }while(parseInt(A) > parseInt(B));
+                ordenmas = "";
+                ordenmenos = "";
+                suma = 0;
+                for(i = parseInt(A), j = parseInt(B); i <= parseInt(B); i++, j--){
+                    ordenmas += i + ", ";
+                    ordenmenos += j + ", ";
+                    suma += i; 
+
+                }
+                document.getElementById('ordenmas').innerHTML = "Menor a mayor: " + ordenmas;
+                document.getElementById('ordenmenos').innerHTML = "Mayor a menor: " + ordenmenos;
+                document.getElementById('suma').innerHTML = "Suma: " + suma;
+            }
+
+
+
+        </script>
+    </head>
+    <body>
+        <h1>EJERCICIO ORDEN</h1>
+        <div id="ordenmenos"></div>
+        <div id="ordenmas"></div>     
+        <div id="suma"></div> 
+
+    </body>
+</html>
