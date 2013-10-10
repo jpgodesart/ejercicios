@@ -20,15 +20,23 @@ and open the template in the editor.
                 ordenmas = "";
                 ordenmenos = "";
                 suma = 0;
+                sumapar = 0;
+                sumaimpar = 0;
                 for(i = parseInt(A), j = parseInt(B); i <= parseInt(B); i++, j--){
-                    ordenmas += i + ", ";
-                    ordenmenos += j + ", ";
+                    ordenmas += i + " ";
+                    ordenmenos += j + " ";
                     suma += i; 
-
+                    if(i%2 == 0){                
+                        sumapar += i;
+                    }else{
+                        sumaimpar += i;
+                    }
                 }
                 document.getElementById('ordenmas').innerHTML = "Menor a mayor: " + ordenmas;
                 document.getElementById('ordenmenos').innerHTML = "Mayor a menor: " + ordenmenos;
                 document.getElementById('suma').innerHTML = "Suma: " + suma;
+                document.getElementById('sumapar').innerHTML = "Suma de los numero pares: " + sumapar;
+                document.getElementById('sumaimpar').innerHTML = "Suma de los numeros impares: " + sumaimpar;
             }
 
 
@@ -38,8 +46,14 @@ and open the template in the editor.
     <body>
         <h1>EJERCICIO ORDEN</h1>
         <div id="ordenmenos"></div>
-        <div id="ordenmas"></div>     
+        <br/>
+        <div id="ordenmas"></div> 
+        <br/>
         <div id="suma"></div> 
+        <br/>
+        <div id="sumapar"></div> 
+        <br/>
+        <div id="sumaimpar"></div> 
 
     </body>
 </html>
