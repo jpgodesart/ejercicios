@@ -1,0 +1,43 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 11</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            window.onload = funciondivisores;
+            function funciondivisores() {
+                
+                do{
+                    
+                num = prompt("Dame un numero:");
+                
+                }while(isNaN(num));
+                
+                divisor ="";
+                for(i = 1; i <= num; i++){
+                    
+                    if(parseInt(num) % parseInt(i) == 0){
+                        
+                        divisor+= i + " ";
+                    }
+                }
+                
+                document.getElementById('div').innerHTML = "los divisores de " + num + " son: " + divisor;
+            }
+
+
+
+        </script>
+    </head>
+    <body>
+        <h1>EJERCICIO DIVISORES</h1>
+        <div id="div"></div>
+
+
+    </body>
+</html>
+
