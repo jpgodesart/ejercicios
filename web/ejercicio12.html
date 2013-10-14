@@ -18,22 +18,27 @@ and open the template in the editor.
                 } while (isNaN(num));
                 primos = "";
                 divisores = 0;
-                for (i = 0; i <= num; i++) {
-                    for (j = 2; j < i; j++) {
+                for (i = num; i > 0; i--) {
+
+                    for (j = i; j > 0; j--) {
 
                         if (parseInt(i) % parseInt(j) == 0) {
                             divisores++;
 
                         }
                     }
+
+                    if (divisores == 2) {
+
+                        primos += i + " ";
+
+                    }
+                    divisores = 0;
                 }
-                if (divisores == 2) {
-
-                    primos += num;
-                }
 
 
-                document.getElementById('prim').innerHTML = primos;
+
+                document.getElementById('prim').innerHTML = "Los numeros primos entre 1 y " + num + " son " + primos;
             }
 
 

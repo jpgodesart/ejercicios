@@ -1,0 +1,49 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 13</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            window.onload = funcionfactorial;
+            function funcionfactorial() {
+
+                do {
+
+                    num = prompt("Dame un numero:");
+
+                } while (isNaN(num));
+                factorial = 0;
+                calculo = "";
+                for (i = num; i > 0; i--) {
+
+                    for (j = i; j > 0; j--) {
+
+                        factorial = parseInt(i)*parseInt(j);
+                        calculo += i + "x" + j + " ";
+
+                        
+                    }
+                    calculo += " = " + factorial;
+                }
+
+
+
+                document.getElementById('fac').innerHTML = calculo;
+            }
+
+
+        </script>
+    </head>
+    <body>
+        <h1>EJERCICIO FACTORIAL</h1>
+        <div id="fac"></div>
+
+
+    </body>
+</html>
+
+
