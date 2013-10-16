@@ -1,0 +1,35 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 13</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            window.onload = funcionstring;
+            function funcionstring() {
+
+
+                frase = "";
+                frase = prompt("Dame una frase:");
+                frase.match(" ");
+                document.writeln(frase.length);
+                
+
+
+                document.getElementById('frase').innerHTML = frase;
+                document.getElementById('num').innerHTML = caracteres;
+            }
+
+
+        </script>
+    </head>
+    <body>
+        <h1>EJERCICIO 14</h1>
+        <div id="frase"></div>
+        <div id="num"></div>
+
+    </body>
+</html>
