@@ -16,19 +16,22 @@ and open the template in the editor.
                     num = prompt("Dame un numero:");
 
                 } while (isNaN(num));
-                factorial = 0;
+                factorial = 1;
                 calculo = "";
-                for (i = num; i > 0; i--) {
 
-                    for (j = i; j > 0; j--) {
+                    for (j = 1; j <= num; j++) {
 
-                        factorial = parseInt(i)*parseInt(j);
-                        calculo += i + "x" + j + " ";
+                        calculo += j;
+                        if(j != num){
+                            calculo += " X ";
+                        }
+                        factorial *= parseInt(j);
+                        
 
                         
                     }
                     calculo += " = " + factorial;
-                }
+
 
 
 

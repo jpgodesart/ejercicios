@@ -13,14 +13,24 @@ and open the template in the editor.
 
 
                 frase = "";
+                caracteres = 0;
+                palabras = 0;
+                numlong = 0;
+                numeros = "";
+                
                 frase = prompt("Dame una frase:");
-                frase.match(" ");
-                document.writeln(frase.length);
+                caracteres = frase.length;
+                frasedividida = frase.split(" ");
+                palabras = frasedividida.length;
+                numeros = frase.match(/\d+\d/)
+                numlong = numeros.length;
+                
                 
 
-
                 document.getElementById('frase').innerHTML = frase;
-                document.getElementById('num').innerHTML = caracteres;
+                document.getElementById('num').innerHTML = "Caracteres: " + caracteres;
+                document.getElementById('numpalabras').innerHTML = "Palabras: " + palabras;
+                document.getElementById('numlong').innerHTML = "Cifras: " + numlong;
             }
 
 
@@ -30,6 +40,7 @@ and open the template in the editor.
         <h1>EJERCICIO 14</h1>
         <div id="frase"></div>
         <div id="num"></div>
-
+        <div id="numpalabras"></div>
+        <div id="numlong"></div>
     </body>
 </html>
