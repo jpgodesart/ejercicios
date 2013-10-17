@@ -1,0 +1,58 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 18</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            window.onload = funciondesc;
+            function funciondesc() {
+
+
+                precio = 0;
+                stock = 0;
+                descuento = "";
+                precio = prompt("Precio del artículo:");
+                stock = prompt("Stock:");
+
+                if(precio < 100){
+                    if(stock < 10){                        
+                        descuento = "2%";
+                    }else if(stock < 100){
+                            descuento = "10%";
+                    }else if(stock < 1000){
+                            descuento = "25%";
+                    }      
+                }
+                if(precio >=100 && precio <= 1000){
+                    if(stock < 10){                        
+                        descuento = "4%";
+                    }else if(stock < 1000){
+                            descuento = "8%";                
+                    }
+                }
+                if(precio >= 1000){
+                    if(stock < 100){                        
+                        descuento = "3%";
+                    }else if(stock >=100 && stock <= 200){
+                            descuento = "5%";
+                    }else if(stock > 200){
+                            descuento = "7%";
+                    }      
+                } 
+               document.getElementById('desc').innerHTML = "Descuento: " + descuento;
+            }
+
+
+        </script>
+    </head>
+    <body>
+        <h1>EJERCICIO 18</h1>
+        <h1 id="desc"></h1>
+      
+       
+    </body>
+</html>

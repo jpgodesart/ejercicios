@@ -1,0 +1,54 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 16</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            window.onload = funcionsust;
+            function funcionsust() {
+
+
+                frase = "";
+                fraseB = "";
+                fraseC = "";
+                frasefinal= "";
+                frase = prompt("Dame una frase:");
+                fraseB = prompt("Texto a buscar:");
+                fraseC = prompt("Sustituimos por:");
+                caracteres = frase.length;
+                caracteresB = fraseB.length;
+                caracteresC = fraseC.length;
+
+                for(i=0, j=0, x=0; i<= caracteres, j<= caracteresB, x<= caracteresC; i++){
+                  var car = frase.charAt(i);
+                  var carB = fraseB.charAt(j);
+                  var carC = fraseC.charAt(x);
+                  
+                  if(car == carB){
+                     
+                     frasefinal += carC; 
+                     x++;
+                     j++;
+                  }
+                  else{
+                      frasefinal += car;
+                  }
+              }
+
+               document.getElementById('final').innerHTML = "Frase: " + frasefinal;
+            }
+
+
+        </script>
+    </head>
+    <body>
+        <h1>EJERCICIO 16</h1>
+        <div id="final"></div>
+      
+       
+    </body>
+</html>

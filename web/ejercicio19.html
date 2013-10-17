@@ -1,0 +1,43 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 19</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            window.onload = funciontrim;
+            function funciontrim() {
+
+
+                frase = "";
+                final ="";
+                frase = prompt("Dame una frase:");
+                caracteres = frase.length;
+                trim = /^[\s]$/;
+              
+                for(var i=0; i<= caracteres; i++){
+                  var car =frase.charAt(i);
+                   if(trim.test(car)){
+                       car = "";
+                   }
+                   final += car;
+                }
+                           
+
+   
+                document.getElementById('trim').innerHTML = "Sin Espacios: " + final;                
+            }
+
+
+        </script>
+    </head>
+    <body>
+        <h1>EJERCICIO 19</h1>
+        <div id="trim"></div>
+       
+    </body>
+</html>
+
