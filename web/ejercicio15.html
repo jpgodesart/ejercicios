@@ -1,0 +1,63 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 15</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            window.onload = funcionpalindromo;
+            function funcionpalindromo() {
+
+
+                frase = "";
+                palin = "";
+                anterior = "";
+                palindromo2 = "";
+                palindromo = "";
+                frasedividida = "";
+                reves = "";
+                
+                frase = prompt("Dame una frase:");
+                caracteres = frase.length;
+                cont = 1;
+                for(i=0; i<= caracteres; i++){
+                  var car = frase.charAt(i);
+                  if(cont % 2 == 0){
+                    palin += car + anterior;
+                  }
+                  else{
+                      anterior = car;
+                  }
+                  cont++;     
+                }
+                for( j = caracteres; j>= 0; j--){
+                   var car1 = palin.charAt(j);
+                   palindromo2 += car1;
+                }
+                for( x = caracteres; x>= 0; x--){
+                   var car2 = frase.charAt(x);
+                   palindromo += car2;
+                }                
+                
+                frasedividida = frase.split(" ");
+                reves = frasedividida.reverse().join(" ");
+                
+               document.getElementById('pal1').innerHTML = "Palindromo : " + palindromo;
+               document.getElementById('pal').innerHTML = "Palindromo 2: " + palindromo2;
+               document.getElementById('rev').innerHTML = "Frase al revés por palabra: " + reves;
+            }
+
+
+        </script>
+    </head>
+    <body>
+        <h1>EJERCICIO 15</h1>
+        <div id="pal1"></div>
+        <div id="pal"></div>
+        <div id="rev"></div>        
+       
+    </body>
+</html>

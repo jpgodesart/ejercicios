@@ -15,22 +15,42 @@ and open the template in the editor.
                 frase = "";
                 caracteres = 0;
                 palabras = 0;
-                numlong = 0;
-                numeros = "";
-                
+                cdigito = 0;
+                cminus = 0;
+                cmayus = 0;
+                csimbolo = 0;
                 frase = prompt("Dame una frase:");
                 caracteres = frase.length;
+                numeros = /^[0-9]$/;
+                minuscula = /^[a-z]$/;
+                mayuscula = /^[A-Z]$/;
+                simbolo = /^[\W]/;
+                
+                for(var i=0; i<= caracteres; i++){
+                  var car =frase.charAt(i);
+                   if(numeros.test(car)){
+                       cdigito++;
+                   } 
+                   if(minuscula.test(car)){
+                       cminus++;
+                   }                   
+                   if(mayuscula.test(car)){
+                       cmayus++;
+                   }
+                   if(simbolo.test(car)){
+                       csimbolo++;
+                   }                   
+                }
                 frasedividida = frase.split(" ");
-                palabras = frasedividida.length;
-                numeros = frase.match(/\d+\d/)
-                numlong = numeros.length;
-                
-                
+                palabras = frasedividida.length;                              
 
                 document.getElementById('frase').innerHTML = frase;
                 document.getElementById('num').innerHTML = "Caracteres: " + caracteres;
                 document.getElementById('numpalabras').innerHTML = "Palabras: " + palabras;
-                document.getElementById('numlong').innerHTML = "Cifras: " + numlong;
+                document.getElementById('numlong').innerHTML = "Cifras: " + cdigito;
+                document.getElementById('minus').innerHTML = "Minusculas: " + cminus; 
+                document.getElementById('mayus').innerHTML = "Mayusculas: " + cmayus;   
+                document.getElementById('simbol').innerHTML = "Simbolos: " + csimbolo;                
             }
 
 
@@ -42,5 +62,8 @@ and open the template in the editor.
         <div id="num"></div>
         <div id="numpalabras"></div>
         <div id="numlong"></div>
+        <div id="minus"></div>
+        <div id="mayus"></div>
+        <div id="simbol"></div>        
     </body>
 </html>
